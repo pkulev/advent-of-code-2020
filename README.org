@@ -1,0 +1,15 @@
+#+TITLE: Advent of Code 2020
+
+Trying to solve tasks using clojure.
+
+* Installation
+
+  #+begin_src bash
+    $ git clone git@github.com:pkulev/advent-of-code-2020.git
+  #+end_src
+
+* Usage
+
+  #+begin_src bash
+    $ lein run
+  #+end_src
