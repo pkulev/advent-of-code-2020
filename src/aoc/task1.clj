@@ -2,15 +2,23 @@
   (:require [clojure.math.combinatorics :as combo]))
 
 (defn solve
-  "Solve task 1."
   []
-  (let [input (aoc.core/read-resource "task1.txt" aoc.core/parse-int)
-        target-pair (two-sum-to input 2020)]
+  (let [input (aoc.core/read-resource "task1.txt" aoc.core/parse-int)]
+    (println (solve-task input))
+    (println (solve-* input))))
+
+(defn solve-task
+  "Solve task 1."
+  [input]
+  (let [target-pair (n-sum-to 2 input 2020)]
     (apply * target-pair)))
 
-(defn two-sum-to
-  "Returns list of two elements that sums to provided number."
-  [numbers to]
-  (first (filter #(= (apply + %) to)
-                 (combo/combinations numbers 2))))
+(defn solve-* [input]
+  (let [target-trio (n-sum-to 3 input 2020)]
+    (apply * target-trio)))
 
+(defn n-sum-to
+  "Returns list of two elements that sums to provided number."
+  [n numbers to]
+  (first (filter #(= (apply + %) to)
+                 (combo/combinations numbers n))))
