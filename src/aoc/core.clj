@@ -23,3 +23,8 @@
   "Parse integer from string."
   [str]
   (Integer/parseInt str))
+
+(defn bool-xor
+  "Boolean xor."
+  [a b]
+  (Boolean/logicalXor a b))
