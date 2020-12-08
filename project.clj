@@ -4,7 +4,8 @@
   :license {:name "MIT"
             :url "https://mit-license.org/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [org.clojure/math.combinatorics "0.1.5"]]
+                 [org.clojure/math.combinatorics "0.1.5"]
+                 [org.clojure/tools.namespace "1.1.0"]]
   :plugins [[lein-cljfmt "0.7.0"]]
   :main ^:skip-aot aoc.core
   :target-path "target/%s"
