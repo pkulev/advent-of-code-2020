@@ -9,7 +9,10 @@
 (defn read-resource%
   "Return list of lines for resource file by name."
   [file]
-  (clojure.string/split-lines (slurp (clojure.java.io/resource file))))
+  (-> file
+      (clojure.java.io/resource)
+      (slurp)
+      (clojure.string/split-lines)))
 
 (defn read-resource
   "Return list of lines for resource file by name."
