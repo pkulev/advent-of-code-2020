@@ -18,7 +18,7 @@
     (apply * target-trio)))
 
 (defn n-sum-to
-  "Returns list of two elements that sums to provided number."
+  "Returns list of N elements that sums to provided number."
   [n numbers to]
   (first (filter #(= (apply + %) to)
                  (combo/combinations numbers n))))
