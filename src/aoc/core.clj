@@ -28,3 +28,8 @@
   "Boolean xor."
   [a b]
   (Boolean/logicalXor a b))
+
+(defn replace-char
+  "Replace char in string at index."
+  [s idx char]
+  (str (subs s 0 idx) char (subs s (inc idx))))
