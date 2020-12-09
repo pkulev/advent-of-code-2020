@@ -23,15 +23,8 @@
 (defn position-checker
   "Letter must be only in password at first-pos or second-pos."
   [first-pos second-pos letter password]
-  (aoc.core/bool-xor (= letter (str (get password (- first-pos 1))))
-                     (= letter (str (get password (- second-pos 1))))))
-
-(defn solve
-  "Solve whole task2."
-  []
-  (let [input (aoc.core/read-resource "task2.txt" parse-input-entry)]
-    (println (solve-task input))
-    (println (solve-* input))))
+  (aoc.core/bool-xor (= letter (str (get password (dec first-pos))))
+                     (= letter (str (get password (dec second-pos))))))
 
 (defn solve-task
   "Solve task2."
@@ -46,3 +39,10 @@
   (->> input
        (filter (password-checker position-checker))
        (count)))
+
+(defn solve
+  "Solve whole task2."
+  []
+  (let [input (aoc.core/read-resource "task2.txt" parse-input-entry)]
+    (println (solve-task input))
+    (println (solve-* input))))
