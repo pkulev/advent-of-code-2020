@@ -9,14 +9,14 @@
 (defn count-trees
   "Recursively count trees."
   [input idx acc]
-  (let [line (fnext input)
-        rest-input (next (next input))
+  (let [line (first input)
+        rest-input (next input)
         next-idx (if line (mod (+ idx 3) (count line)) 0)
         num-trees (if (= (get line idx) \#) (+ acc 1) acc)]
     (if (nil? line)
       num-trees
       (do
-        (debug-line line next-idx)
+        (debug-line line idx)
         (recur rest-input next-idx num-trees)))))
 
 (defn solve-task
