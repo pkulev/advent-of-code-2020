@@ -65,4 +65,3 @@
                    (map (partial apply hash-map)))]
     (println (solve-task input))
     (println (solve-* input))))
-

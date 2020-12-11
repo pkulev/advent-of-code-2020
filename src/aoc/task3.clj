@@ -42,7 +42,3 @@
   (let [input (aoc.core/read-resource "task3.txt")]
     (solve-task input)
     (solve-* input)))
-
-
-
-    
