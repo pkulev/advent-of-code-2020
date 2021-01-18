@@ -21,7 +21,7 @@
 
 (defn parse-int
   "Parse integer from string."
-  ([str] (Integer/parseInt str 10))
+  ([str] (parse-int str 10))
   ([str base] (Integer/parseInt str base)))
 
 (defn bool-xor
